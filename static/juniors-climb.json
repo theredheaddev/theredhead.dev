@@ -1,0 +1,17 @@
+[
+    {
+        "id": "a-juniors-climb",
+        "title": "A Juniors Climb",
+        "description": "Think back to when you were a junior. Do you remember you first day? Coming in and meeting everyone, finding you desk, looking at all the amazing technology stacks the company uses. What do you think now?",
+        "data": [
+            {
+                "type": "p",
+                "content": "Think back to when you were a junior. Do you remember you first day? Coming in and meeting everyone, finding you desk, looking at all the amazing technology stacks the company uses."
+            },
+            {
+                "type": "p",
+                "content": "Now think about if you had any contant fear that you could be let go at any moment. Maybe you have come down with imposter syndrome. Maybe you're working an extra four hours a day for free because you don't want people to think you're a slacker"
+            }
+        ]
+    }
+]
