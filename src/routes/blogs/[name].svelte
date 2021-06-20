@@ -29,13 +29,18 @@
 			{#if content.type === BlogContentType.Paragraph}
 				<p>{content.data}</p>
 			{:else if content.type === BlogContentType.Image}
-				<img alt="content" src={content.data} />
+				<div class="d-flex justify-content-center">
+					<img alt="content" src={content.data} />
+				</div>
 			{/if}
 		{/each}
 	</div>
 </div>
 
-<style>
-	.content-block {
+<style lang="scss">
+	img {
+		@media (max-width: 768px) {
+			width: 90%;
+		}
 	}
 </style>

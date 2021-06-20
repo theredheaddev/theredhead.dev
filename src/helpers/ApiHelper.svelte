@@ -1,7 +1,7 @@
 <script context="module">
 	import { getToken } from './Auth.svelte';
 
-	const base = 'http://localhost:5000/api';
+	const base = 'https://theredhead.dev/api';
 
 	export const getRequest = (url) => {
 		return fetch(`${base}/${url}`)

@@ -6,7 +6,7 @@
 <div class="wrapper d-flex">
 	<div class="content-wrapper d-lg-flex ">
 		<div class="side-nav d-none d-lg-block">
-			<LeftNav/>
+			<LeftNav />
 		</div>
 		<div class="sideNav d-block d-lg-none">
 			<MobileNav />
@@ -23,16 +23,18 @@
 		max-height: 100vh;
 	}
 
-    .content-wrapper {
-        flex: 1;
-    }
+	.content-wrapper {
+		flex: 1;
+	}
 
 	.side-nav {
 		min-width: 350px;
+		overflow-y: auto;
+		background-color: #ff6738;
 	}
 
 	.content {
-        overflow-y: auto;
+		overflow-y: auto;
 		width: 100%;
 	}
 </style>
