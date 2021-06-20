@@ -1,28 +1,40 @@
 <script context="module" lang="ts">
 	import BlogPreview from '../../components/BlogPreview.svelte';
+	import { Request } from '../../helpers/ApiHelper.svelte';
 
 	let blogs = [];
-	let searchBox = '';
 
 	export async function load() {
-		blogs = await fetch('https://theredhead.dev/api/blogs').then((x) => x.json());
+		blogs = await Request('blogs');
 
 		return {
 			status: 200
 		};
 	}
-
-	const submit = (e) => {
-		e.preventDefault();
-		console.log(searchBox);
-	};
 </script>
 
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Icon from 'svelte-awesome';
+	import { spinner } from 'svelte-awesome/icons';
 
 	let rendered = false;
 	let sb = [];
+
+	let loading = false;
+
+	let searchBox = '';
+
+	const submit = async (e) => {
+		e.preventDefault();
+
+		loading = false;
+
+		sb = await Request(`blogs?text=${searchBox || ''}&page=0`).then((_) => {
+			loading = false;
+			return _;
+		});
+	};
 
 	onMount(() => {
 		rendered = true;
@@ -47,11 +59,17 @@
 		</div>
 	</form>
 
-	{#each rendered ? sb : blogs as blog}
-		<div class="mt-3 shadow">
-			<BlogPreview {blog} />
-		</div>
-	{/each}
+	{#if loading}
+		<Icon data={spinner} spin scale={4} />
+	{/if}
+
+	{#if !loading}
+		{#each rendered ? sb : blogs as blog}
+			<div class="mt-3 shadow">
+				<BlogPreview {blog} />
+			</div>
+		{/each}
+	{/if}
 </div>
 
 <style>

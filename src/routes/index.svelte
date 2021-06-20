@@ -1,10 +1,12 @@
 <script context="module">
+	import { Request } from '../helpers/ApiHelper.svelte';
+
 	import BlogPreview from '../components/BlogPreview.svelte';
 
 	let blogs = [];
 
 	export async function load() {
-		blogs = await fetch('https://theredhead.dev/api/blogs').then((x) => x.json());
+		blogs = await Request('blogs');
 
 		return {
 			status: 200
