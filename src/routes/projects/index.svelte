@@ -1,5 +1,7 @@
-<svelte:head>
-	<title>RHD | Projects</title>
-</svelte:head>
+<script lang="ts">
+	import RHDTitle from '../../components/RHDTitle.svelte';
+</script>
+
+<RHDTitle pageName="Projects" />
 
 Projects page coming soon

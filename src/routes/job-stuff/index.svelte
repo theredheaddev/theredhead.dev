@@ -1,12 +1,11 @@
 <script lang="ts">
+	import RHDTitle from '../../components/RHDTitle.svelte';
 	import Education from '../../components/Education.svelte';
 	import { technologies, experience, education } from './job.data';
 	import Job from '../../components/Job.svelte';
 </script>
 
-<svelte:head>
-	<title>RHD | Job Stuff</title>
-</svelte:head>
+<RHDTitle pageName="Job Stuff" />
 
 <h3>Technology Skill set</h3>
 <ul>

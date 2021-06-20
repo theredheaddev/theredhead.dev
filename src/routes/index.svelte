@@ -1,12 +1,12 @@
 <script context="module">
-	import { Request } from '../helpers/ApiHelper.svelte';
+	import { getRequest } from '../helpers/ApiHelper.svelte';
 
 	import BlogPreview from '../components/BlogPreview.svelte';
 
 	let blogs = [];
 
 	export async function load() {
-		blogs = await Request('blogs');
+		blogs = await getRequest('blogs');
 
 		return {
 			status: 200

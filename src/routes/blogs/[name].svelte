@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import { Request } from '../../helpers/ApiHelper.svelte';
+	import { getRequest } from '../../helpers/ApiHelper.svelte';
 
 	import type { Blog } from '../../models/blog.type';
 	import { BlogContentType } from '../../models/blog.type';
@@ -9,7 +9,7 @@
 	export async function load({ page }) {
 		const key = page.params['name'];
 
-		blog = await Request(`blogs/${key}`);
+		blog = await getRequest(`blogs/${key}`);
 
 		return {
 			status: 200

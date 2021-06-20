@@ -1,5 +1,7 @@
-<svelte:head>
-	<title>RHD | Teaching</title>
-</svelte:head>
+<script lang="ts">
+	import RHDTitle from '../../components/RHDTitle.svelte';
+</script>
+
+<RHDTitle pageName="Teaching" />
 
 Teaching page coming soon

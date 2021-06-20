@@ -1,11 +1,12 @@
 <script context="module" lang="ts">
+	import RHDTitle from '../../components/RHDTitle.svelte';
 	import BlogPreview from '../../components/BlogPreview.svelte';
-	import { Request } from '../../helpers/ApiHelper.svelte';
+	import { getRequest } from '../../helpers/ApiHelper.svelte';
 
 	let blogs = [];
 
 	export async function load() {
-		blogs = await Request('blogs');
+		blogs = await getRequest('blogs');
 
 		return {
 			status: 200
@@ -30,7 +31,7 @@
 
 		loading = false;
 
-		sb = await Request(`blogs?text=${searchBox || ''}&page=0`).then((_) => {
+		sb = await getRequest(`blogs?text=${searchBox || ''}&page=0`).then((_) => {
 			loading = false;
 			return _;
 		});
@@ -42,9 +43,7 @@
 	});
 </script>
 
-<svelte:head>
-	<title>RHD | Blogs</title>
-</svelte:head>
+<RHDTitle pageName="Blogs" />
 
 <div>
 	<!-- svelte-ignore component-name-lowercase -->
@@ -55,12 +54,12 @@
 		</div>
 
 		<div>
-			<button class="btn btn-secondary ms-3" on:click={(e) => submit(e)}>Search</button>
+			<button class="btn btn-secondary ms-3" on:click={submit}>Search</button>
 		</div>
 	</form>
 
 	{#if loading}
-		<Icon data={spinner} spin scale={4} />
+		<Icon data={spinner} pulse scale={4} />
 	{/if}
 
 	{#if !loading}
