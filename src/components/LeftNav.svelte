@@ -31,6 +31,10 @@
 		{
 			name: 'projects',
 			link: '/projects'
+		},
+		{
+			name: 'random',
+			link: '/random'
 		}
 	];
 </script>
