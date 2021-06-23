@@ -1,3 +1,8 @@
+<script context="module">
+	export const ssr = false;
+	export const prerender = false;
+</script>
+
 <script lang="ts">
 	import RHDTitle from '../../components/RHDTitle.svelte';
 	import { onMount } from 'svelte';
