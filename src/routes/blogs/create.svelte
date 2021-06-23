@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import { BlogContentType } from '../../models/blog.type';
 	import type { Blog } from '../../models/blog.type';
+	import { postRequestAuth } from '../../helpers/ApiHelper.svelte';
 
 	let canLoad = false;
 	let focusedInput = '';
@@ -33,7 +34,13 @@
 		focusedInput = '';
 	};
 
-	const handleTypeChange = () => {};
+	const handleSave = (e) => {
+		e.preventDefault();
+
+		postRequestAuth('blogs', newBlog).then((x: Blog) => {
+			window.location.href = `/blogs/${x.key}`;
+		});
+	};
 </script>
 
 {#if canLoad}
@@ -102,7 +109,7 @@
 
 		<br />
 		<br />
-		<button class="btn btn-success">Save blog</button>
+		<button class="btn btn-success" on:click={handleSave}>Save blog</button>
 	</form>
 {/if}
 

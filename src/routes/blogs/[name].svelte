@@ -27,10 +27,10 @@
 	<div class="content-block">
 		{#each blog.content as content}
 			{#if content.type === BlogContentType.Paragraph}
-				<p>{content.data}</p>
+				<p>{@html content.data}</p>
 			{:else if content.type === BlogContentType.Image}
 				<div class="d-flex justify-content-center">
-					<img alt="content" src={content.data} />
+					<img class="blog-image" alt="content" src={content.data} />
 				</div>
 			{/if}
 		{/each}

@@ -19,7 +19,7 @@
 </svelte:head>
 
 {#each blogs as blog}
-	<div class="shadow">
+	<div class="shadow mb-3">
 		<BlogPreview {blog} />
 	</div>
 {/each}
