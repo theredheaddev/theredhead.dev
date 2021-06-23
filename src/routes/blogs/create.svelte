@@ -44,7 +44,7 @@
 
 		{#each newBlog.content as c}
 			{#if c.type === BlogContentType.Paragraph}
-				<p>{c.data}</p>
+				<p>{@html c.data}</p>
 			{:else if c.type === BlogContentType.Image}
 				<div class="d-flex justify-content-center">
 					<img class="blog-image" src={c.data} alt={focusedAlt} />
@@ -54,7 +54,7 @@
 		<p />
 
 		{#if focusedType === BlogContentType.Paragraph}
-			<p>{focusedInput}</p>
+			<p>{@html focusedInput}</p>
 			<textarea
 				class="form-control"
 				bind:value={focusedInput}
