@@ -1,4 +1,4 @@
-import type { Education, JobDescription, TechSkillSet } from 'src/models/Job.type';
+import type { Education, JobDescription, TechSkillSet } from '../../models/Job.type';
 
 export const technologies: TechSkillSet[] = [
     {

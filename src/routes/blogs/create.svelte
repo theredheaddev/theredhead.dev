@@ -2,17 +2,19 @@
 	import { getToken } from '../../helpers/Auth.svelte';
 	import { onMount } from 'svelte';
 	import { BlogContentType } from '../../models/blog.type';
-	import type { Blog } from '../../models/blog.type';
+	import type { Blog, Tag } from '../../models/blog.type';
 	import { postRequestAuth } from '../../helpers/ApiHelper.svelte';
 
 	let canLoad = false;
 	let focusedInput = '';
 	let focusedAlt = '';
+	let tagsString = '';
 	let focusedType = BlogContentType.Paragraph;
 	let newBlog: Blog = {
 		title: '',
 		content: [],
-		key: ''
+		key: '',
+		tags: []
 	};
 
 	onMount(() => {
@@ -36,7 +38,7 @@
 
 	const handleSave = (e) => {
 		e.preventDefault();
-
+		newBlog.tags = tagsString.split(',').map((x) => x.trim());
 		postRequestAuth('blogs', newBlog).then((x: Blog) => {
 			window.location.href = `/blogs/${x.key}`;
 		});
@@ -105,7 +107,17 @@
 				Image
 			</label>
 		</div>
-		<button class="btn btn-primary mt-2" on:click={handleAddClick}>Add Line</button>
+		<button class="btn btn-primary mt-2 mb-3" on:click={handleAddClick}>Add Line</button>
+
+		<div>
+			<label for="tags">Tags</label>
+			<input
+				id="tags"
+				class="form-control w-25 mb-2"
+				bind:value={tagsString}
+				placeholder="Software,Testing,Life,Random"
+			/>
+		</div>
 
 		<br />
 		<br />

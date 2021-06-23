@@ -72,7 +72,6 @@
 				<Icon data={github} class="white ms-2" scale={2} />
 			</a>
 		</div>
-		<i class="white cursor-default">Powered by SvelteKit</i>
 	</div>
 </div>
 

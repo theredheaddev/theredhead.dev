@@ -1,11 +1,18 @@
 export interface Blog {
     title: string;
     key: string;
-    content: BlogContent[]
+    content: BlogContent[];
+    tags: string[];
+    description: string;
+    created: string;
 }
 
+export interface Tag {
+    name: string;
+    totalCount: number;
+}
 export interface BlogContent {
-    type: BlogContentType,
+    type: BlogContentType;
     data: string;
 }
 

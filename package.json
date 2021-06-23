@@ -30,6 +30,7 @@
   },
   "type": "module",
   "dependencies": {
+    "date-fns": "^2.22.1",
     "node-sass": "^6.0.0",
     "svelte-awesome": "^2.3.2",
     "svelte-markdown": "^0.1.8"
