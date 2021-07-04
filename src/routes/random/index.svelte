@@ -1,4 +1,6 @@
 <script lang="ts">
+	import RHDTitle from '../../components/RHDTitle.svelte';
+
 	const games = [
 		{
 			name: 'Banjo-Kazooie',
@@ -22,6 +24,8 @@
 		}
 	];
 </script>
+
+<RHDTitle pageName="Random Stuff" />
 
 <p class="focus">This is essentially a random page for me just to list things.</p>
 <p class="focus">

@@ -21,8 +21,8 @@
 	<title>RHD | {blog.title}</title>
 </svelte:head>
 
-<div>
-	<h2>{blog.title}</h2>
+<div class="container">
+	<h2 class="title">{blog.title}</h2>
 
 	<div class="content-block">
 		{#each blog.content as content}
