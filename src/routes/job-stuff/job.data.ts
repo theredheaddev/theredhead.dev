@@ -39,12 +39,13 @@ export const experience: JobDescription[] = [
         start: 'June 2018',
         role: 'Software Developer',
         roles: [
-            'Code Reviews',
-            'Teaching',
-            'Environment & CI Setup',
-            'Leaning new technologies',
+            'Estimate work to be completed by self or others',
             'Deconstruct tasks into smaller, more manageable tasks',
-            'Estimating work'
+            'Write code to meet project requirements',
+            'Review other team members code to ensure quality',
+            'Learn new technologies',
+            'Help teach and upskill new and existing developers',
+            'Ensure delivery of projects on time and on or under budget'
         ]
     },
     {
