@@ -14,7 +14,7 @@
 
 <RHDTitle pageName="Projects" />
 
-<p class="focus">A place to list all of my current projects or any past works.</p>
+<p class="focus title-para">A place to list all of my current projects or any past works.</p>
 
 <div class="row py-3">
 	{#each projects as p}
@@ -36,8 +36,6 @@
 <style lang="scss">
 	a {
 		text-decoration: none;
-	}
-	a {
 		p {
 			color: black;
 		}

@@ -1,15 +1,26 @@
-<script lang="ts">
+<script lang="ts" context="module">
 	import RHDTitle from '../../components/RHDTitle.svelte';
 	import Education from '../../components/Education.svelte';
-	import { technologies, experience, education } from './job.data';
 	import Job from '../../components/Job.svelte';
+	import { getRequest } from '../../helpers/ApiHelper.svelte';
+	import type { JobStuff } from '../../models/Job.type';
+
+	let jobStuff: JobStuff = null;
+
+	export async function load() {
+		jobStuff = await getRequest('jobstuff');
+
+		return {
+			status: 200
+		};
+	}
 </script>
 
 <RHDTitle pageName="Job Stuff" />
 
 <h3>Technology Skill set</h3>
 <ul>
-	{#each technologies as t}
+	{#each jobStuff.skillSet as t}
 		<li class="w-100">
 			<a target="_blank" href={t.href}>
 				<b class="focus">{t.title}</b>
@@ -20,13 +31,13 @@
 <br />
 
 <h3>Experience</h3>
-{#each experience as e}
+{#each jobStuff.jobs as e}
 	<Job {e} />
 {/each}
 <br />
 
 <h3>Education</h3>
-{#each education as ed}
+{#each jobStuff.education as ed}
 	<Education {ed} />
 	<br />
 {/each}

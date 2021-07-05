@@ -1,3 +1,9 @@
+export interface JobStuff {
+    jobs: JobDescription[];
+    skillSet: TechSkillSet[];
+    education: Education[];
+}
+
 export interface TechSkillSet {
     title: string;
     href: string;

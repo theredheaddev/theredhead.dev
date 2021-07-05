@@ -27,8 +27,8 @@
 
 <RHDTitle pageName="Random Stuff" />
 
-<p class="focus">This is essentially a random page for me just to list things.</p>
-<p class="focus">
+<p class="focus title-para">This is essentially a random page for me just to list things.</p>
+<p class="focus title-para">
 	Things such as favourite video games, shows and random pictures or something. I don't know yet...
 </p>
 
@@ -38,11 +38,3 @@
 		<li><b class="focus">{game.name}</b> - Completed: {game.completed}</li>
 	{/each}
 </ul>
-
-<style lang="scss">
-	p {
-		text-align: center;
-		font-size: 18px;
-		font-weight: bold;
-	}
-</style>
